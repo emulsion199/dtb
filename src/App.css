@@ -1,0 +1,18 @@
+.container{
+  background: #d19d72;
+  width: 50%;
+  color:white;
+  text-align: center;
+  margin:0 auto;
+  height:100px;
+}
+.button{
+  background:#a8754b;
+  border:#a8754b;
+  color:white;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-size: 20pt;
+}
