@@ -427,16 +427,7 @@ else if(this.state.page===7)
   
 }}
 _onPostdata={function(){
-  console.log({
-    "인기주류":tastelist,
-    "도수":postdosu,
-    "맛":posttaste,
-    "탄산":posttansan,
-    "상황":postcond,
-    "밥":postbob,
-    "안주":postanjoo,
-  })
-  axios.post('https://projw.pythonanywhere.com/home',
+  axios.post('http://10.64.128.166:5000/home',
 {
   "인기주류":tastelist,
   "도수":postdosu,
@@ -450,7 +441,8 @@ _onPostdata={function(){
   console.log(response.data)
     this.setState({
 
-        data: response.data['result']
+      data: response.data['result'],
+
     })
 }.bind(this))
 }.bind(this)
@@ -467,8 +459,32 @@ _onPostdata={function(){
 
     else if(this.state.page===8)
     {
+ 
+      _page=<Result 
+      loginf={this.state.login_inform}
+      postdata={this.state.data}
 
-      _page=<Result loginf={this.state.login_inform} postdata={this.state.data} _onNextpage={this.onNextpage} _selectedlist={this.state.selectedcardid}></Result>
+      onGradepost={function(){
+        axios.post('http://10.64.128.166:5000/grade',
+{
+  "이메일":email,
+  "점수":1
+})
+.then(function (response) {
+  console.log(response)
+  if(response.data['result']==1)
+  {
+        alert('평가 감사합니다!')
+  }
+  else{
+    alert('이미 평가 하셨습니다!')
+  }
+
+}
+)
+}
+}
+    ></Result>
     }
 
     return(

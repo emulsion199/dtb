@@ -79,12 +79,11 @@ class Result extends Component
         id={_postdata[2]} rank={3} imgsrc={require('./imgbox/'+(_postdata[2]+12)+'.jpg').default} imgname={sooldata[_postdata[2]]["상품명"]}></RecCard></div>
          
       </div>
-      <Last btnc='이 앱이 정식으로 출시 된다면 사용해볼 의향이 있나요?'
+      <Last 
+      _onGradepost={this.props.onGradepost}
+      btnc='이 앱이 정식으로 출시 된다면 사용해볼 의향이 있나요?'
       ></Last>
 
-  
-    
-   
       </motion.div>
     }
 

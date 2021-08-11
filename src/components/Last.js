@@ -6,8 +6,8 @@ class Last extends Component
     {
         const Btncase=this.props.btnc
         return(
-            <div className='postbtn' 
->
+            <div className='postbtn' onClick={function(){
+                this.props._onGradepost()}.bind(this)}>
             {Btncase}
          </div>
 
