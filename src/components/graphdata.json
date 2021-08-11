@@ -1,0 +1,27 @@
+[
+    {
+      "taste": "단맛",
+      "chardonay": 5
+
+    },
+    {
+      "taste": "신맛",
+      "chardonay": 1
+
+    },
+    {
+      "taste": "바디감",
+      "chardonay": 2
+
+    },
+    {
+      "taste": "청량감",
+      "chardonay": 3
+
+    },
+    {
+      "taste": "향",
+      "chardonay": 3
+
+    }
+  ]

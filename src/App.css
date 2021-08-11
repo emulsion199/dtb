@@ -1,18 +1,333 @@
+
 .container{
-  background: #d19d72;
-  width: 50%;
-  color:white;
   text-align: center;
   margin:0 auto;
-  height:100px;
+  align-content: center;
+
 }
-.button{
-  background:#a8754b;
-  border:#a8754b;
+.upbar{
+  height:40px;
+  background-color: rgb(11, 180, 101);
+  color: white;
+  font-size: 13pt;
+  padding-top:10px;
+}
+.normalcard{
+  border-radius: 10px;
+  width:90px;
+  height:100px;
+  box-shadow: 0px 0px 5px gray;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: -webkit-box-shadow 0.2s,-webkit-transform 0.2s;
+  transition: box-shadow 0.2s,transform 0.2s
+}
+.page{
+  width:90px;
+  height:100px;
+  box-shadow: 0px 0px 8px rgb(172, 117, 69);
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 2s;
+  transform: scale(0.90,0.90);
+
+}
+
+
+.selectedcard{
+  width:90px;
+  height:100px;
+  border-radius: 10px;
+ 
+  box-shadow: 0px 0px 8px rgb(9, 95, 35);
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
+  transform: scale(0.90,0.90);
+}
+
+.cardname{
+  border-radius: 0px 0px 10px 10px;
+  background-color:rgb(11, 180, 101);
+  height:21px;
   color:white;
+  font-size:10pt;
+}
+
+
+.step{
+  margin-top:18px;
+  background: rgb(11, 180, 101);
+  color:white;
+  height:28px;
+  width:58px;
+  align-content: center;
+  font-size:14pt;
+
+}
+.step_question{
+  margin-left:10px;
+  color: rgb(11, 180, 101);
+}
+.name{
+  background: rgb(11, 180, 101);
+  color:white;
+  font-size:12pt;
+}
+
+
+
+
+.btn{
+  background: rgba(128, 255, 0, 0);
+  margin-top: 10px;
+  border:rgba(128, 255, 0, 0)
+}
+.logo{
+  width:200pt;
+  height:200pt;
+}
+.nextbtn{
+  box-shadow: 0px 2px 5px rgb(146, 120, 120);
   margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  font-size: 20pt;
+  background-color: rgb(11, 180, 101);
+  color: white;
+  width: 400px;
+  height: 60px;
+  border-radius: 100px 100px 100px 100px;
+  -webkit-transition:  -webkit-transform 0.2s;
+  transition:  transform 0.2s; 
+}
+.nextbtn:active{
+  transform: scale(0.95,0.95);
+}
+.qbox{
+  box-shadow: 0px 2px 5px rgb(145, 145, 145);
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(11, 180, 101);
+  width: 400px;
+  height: 60px;
+  border-radius: 100px 100px 100px 100px;
+  -webkit-transition:  -webkit-transform 0.2s, -webkit-background-color 0.2s;;
+  transition:  transform 0.2s,background-color 0.2s; 
+}
+.selectedqbox{
+  box-shadow: 0px 2px 5px rgb(146, 146, 146);
+  margin: 0 auto;
+  background-color: rgb(243, 243, 243);
+  color: rgb(11, 180, 101);
+  width: 400px;
+  height: 60px;
+  border-radius: 100px 100px 100px 100px;
+  transform: scale(0.9,0.9);
+  -webkit-transition:  -webkit-transform 0.2s, -webkit-background-color 0.2s;
+  transition:  transform 0.2s, background-color 0.2s; 
+
+}
+.textinbox{
+  margin-top:10px;
+  font-size:15pt;
+  padding-top: 12pt;
+
+}
+.box{
+  margin: 0 auto;
+  width:300pt;
+}
+.grid{
+  display:grid;
+  grid-template-columns:100px 100px 100px 100px;
+  column-gap: 3px;
+  row-gap:10px;
+}
+
+.rankbox{
+  border-radius: 10px;
+  margin: 0 auto;
+  width:260px;
+  height:260px;
+}
+.borderimage{
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  background-color: rgb(255, 255, 255);
+  margin-top:15px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px gray;
+}
+.btnhoverrange{
+  border-radius: 100px;
+  background-color: black;
+  height:180px;
+  width:180px;
+  margin-top:-215px;
+  opacity: 0;
+}
+.rank{
+  -webkit-transition: -webkit-opacity 0.2s;
+  transition: opacity 0.2s; 
+  font-size:auto;
+  width:180px;
+  height:107px;
+  border-radius: 0px 0px 100px 100px;
+  margin-top:-110px;
+  opacity: 0;
+  color:rgb(255, 255, 255);
+  background-image:  linear-gradient( to top, rgba(0, 0, 0, 0.76)20%, rgba(0, 0, 0, 0) );
+}
+.hoverrank{
+  -webkit-transition:  -webkit-opacity 0.2s;
+  opacity: 1;
+  font-size:auto;
+  width:180px;
+  height:107px;
+  border-radius: 0px 0px 100px 100px;
+  margin-top:-110px;
+  
+  color:rgb(255, 255, 255);
+  background-image:  linear-gradient( to top, rgba(0, 0, 0, 0.76)20%, rgba(0, 0, 0, 0) );
+  transition: opacity 0.2s; 
+}
+.imgnamepad{
+  padding-top: 20px;
+  font-size: 12pt;
+}
+.rankrowgrid{
+  display:grid;
+  justify-items: center;
+  grid-template-rows:20px 200px 30px;
+  row-gap: 0px;
+}
+.listrowgrid{
+  margin-top:50px;
+  display:grid;
+  justify-items: center;
+  grid-template-rows:300px 300px 300px;
+  row-gap: 50px;
+}
+.barrowgrid{
+  display:grid;
+  justify-items: center;
+  grid-template-rows:0px 50px;
+  row-gap: 50px;
+}
+.rankcolgrid{
+  display:grid;
+
+  grid-template-columns: 200px 200px;
+  column-gap: 0px;
+}
+
+.circlebox{
+  margin-top:17px;
+  background-color: rgb(255, 255, 255);
+  width:130px;
+  height:130px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px gray;
+}
+.coloredtext{
+  font-size: 15pt;
+  color: rgb(11, 180, 101);
+}
+.tag{
+  font-size:12pt;
+
+  margin-top:-85px;
+ 
+  color:rgb(160, 160, 160);
+ 
+}
+.soolimg{
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  background-color: white;
+}
+.upc{
+  margin-left:60px;
+  margin-top:-100px;
+}
+.zxc{
+  
+
+  margin-top:-20px;
+  color:rgb(255, 255, 255);
+  height:25px;
+  width:40px;
+  font-size: 15pt;
+
+  background-color: rgb(11, 180, 101);
+}
+.tagbox{
+  box-shadow: 0px 2px 10px rgb(151, 151, 151);
+  border-radius: 10px;
+  margin-top:0px;
+  color:rgb(255, 255, 255);
+  height:50px;
+  width:200px;
+  background-color: rgb(11, 180, 101);
+
+}
+.circlebarbox{
+  display:grid;
+  grid-template-rows:1px 1px;
+  column-gap: 3px;
+  row-gap:10px;
+}
+.circlebar{
+  
+  margin-top:-240px;
+  height:230px;
+  width:230px;
+
+}
+.alchdo{
+  position:absolute;
+  margin-top: -242px;
+  margin-left: 103px;
+  color:rgb(70, 70, 70); 
+}
+.chartdo{
+  margin-top: -492px;
+}
+.resultcol{
+  margin: 0 auto;
+  
+  width:750px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+
+}
+.selectedcircle{
+  margin:0 auto;
+
+  opacity: 1;
+  width:250px;
+
+  -webkit-transition: -webkit-transform 0.2s;
+  transition:opacity 0.2s, width 0.2s, transform 0.2s; 
+  transform:scale(1,1) 
+}
+.unselectedcircle{
+  width:250px;
+  opacity: 0.5;
+
+  -webkit-transition: -webkit-transform 0.2s;
+  transition:opacity 0.2s, width 0.2s, transform 0.2s; 
+  transform:scale(0.5,0.5);
+
+}
+.postbtn{
+  margin: 0 auto;
+  box-shadow: 0px 2px 5px rgb(146, 120, 120);
+  
+  background-color: rgb(11, 180, 101);
+  color: white;
+  width: 400px;
+  height: 60px;
+  border-radius: 100px 100px 100px 100px;
+  -webkit-transition:  -webkit-transform 0.2s;
+  transition:  transform 0.2s; 
 }
