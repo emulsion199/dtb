@@ -1,18 +1,10 @@
 import React,{Component} from 'react'
 import Grid from '@material-ui/core/Grid'
 import Upbar from './Upbar'
-import Container from'@material-ui/core/Container'
 import ImageList  from './ImageList'
-import Paper from '@material-ui/core/Paper'
-import Box from '@material-ui/core/Box'
-import { directive } from '@babel/types'
-import Fab from '@material-ui/core/Fab'
-import NextIcon from '@material-ui/icons/NavigateNext'
-import PrevIcon from '@material-ui/icons/NavigateBefore'
-import Btn from './Btn'
 import Nextbtn from './Nextbtn'
 import { motion } from 'framer-motion'
-import { Typography } from '@material-ui/core'
+import Prevbtn from './Prevbtn'
 class Firstpage extends Component
 {
   constructor(props)
@@ -24,14 +16,25 @@ class Firstpage extends Component
   }
 
   render(){
+    var rorl=null
+    if(this.props._rorl==0)
+    {
+      rorl=1000
+    }
+    else
+    {
+      rorl=-1000
+    }
 
 
     return(
       <div className='container' >
-      <Upbar _page={1} _loginf={this.props.loginf}></Upbar>
+      
       <motion.div
-      initial={{x:-500}}
-      animate={{x:0}}>
+      initial={{x:rorl}}
+      animate={{x:0}}
+      transition={{duration:0.5}}
+      >
       <Grid
       container
       direction='row'
@@ -44,6 +47,10 @@ class Firstpage extends Component
       </Grid>
       <ImageList onChangelist={this.props._onSelectedCard}></ImageList>
       <Nextbtn _pagelevel={1} onNextpage={this.props._onNextpage}></Nextbtn>
+      <Prevbtn
+      _pagelevel={1}
+      onLoginpost={this.props._onLoginpost}
+      onPrevpage={this.props._onPrevpage}></Prevbtn>
       </motion.div>
       </div>
      

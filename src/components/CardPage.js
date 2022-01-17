@@ -17,6 +17,8 @@ class CardPage extends Component
         var _currentnum=this.props.currentnum;
         var _imgsrc=this.props.imgsrc;
         var _imgname=this.props.imgname;
+        var _type=this.props.type;
+        console.log(_type)
         return(
          
             <div className={this.state.isSelected ? 'selectedcard' : 'normalcard'}
@@ -50,8 +52,8 @@ class CardPage extends Component
             }}
             .bind(this)}>
                 <img src={_imgsrc}
-                height={75}
-                className={'soolimg'}
+                
+                className={_type=='sool'?'soolimg':'anjooimg'}
                 ></img>
                 <div className='cardname'>
                     {_imgname}

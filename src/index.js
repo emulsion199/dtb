@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-
+window.Kakao.init("4e615dbb8057909b5c80f93f5760965f");
 ReactDOM.render(
+
+ 
   <React.StrictMode>
     <App />
   </React.StrictMode>,

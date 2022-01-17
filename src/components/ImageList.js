@@ -1,12 +1,6 @@
 import React,{Component} from 'react'
-import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import sool1 from './sool1.jpg'
 import CardPage from './CardPage'
-import {AnimateSharedLayout, motion} from 'framer-motion'
 import 'C:/Users/user/hello/src/App.css'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardContent from '@material-ui/core/CardContent'
 import sooldata from './sool_data.json'
 var sool=[]
 var i=1
@@ -52,6 +46,7 @@ class ImageList extends Component
   
         var _card= sool.map((item)=>
             <CardPage 
+            type='sool'
             onclickedplus={function(){
                 var k=this.state.selectedlist.concat(item.id)
 

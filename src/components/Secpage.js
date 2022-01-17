@@ -1,20 +1,12 @@
 import React,{Component} from 'react'
 import Grid from '@material-ui/core/Grid'
 import Upbar from './Upbar'
-import Container from'@material-ui/core/Container'
-import ImageList  from './ImageList'
-import Paper from '@material-ui/core/Paper'
-import Box from '@material-ui/core/Box'
-import { directive } from '@babel/types'
-import Fab from '@material-ui/core/Fab'
-import NextIcon from '@material-ui/icons/NavigateNext'
-import PrevIcon from '@material-ui/icons/NavigateBefore'
-import Btn from './Btn'
 import Nextbtn from './Nextbtn'
-import { Typography } from '@material-ui/core'
+
 import Qbox from './Qbox'
 import { motion } from 'framer-motion'
 import Resbtn from './Resbtn'
+import Prevbtn from './Prevbtn'
 class Secpage extends Component
 {
   constructor(props)
@@ -27,13 +19,23 @@ class Secpage extends Component
 }
 
   render(){
+    var rorl=null
+    if(this.props._rorl==0)
+    {
+      rorl=1000
+    }
+    else
+    {
+      rorl=-1000
+    }
 
     var question=this.props._question
     var pagelevel=this.props._page_level
     var nxt_btn=null
-    if(pagelevel==7)
+    if(pagelevel==10)
     {
       nxt_btn=<Resbtn 
+      stateq_list={this.state.q_list}
       onDosuchange={function(){
       this.props._onDosuchange(this.state.q_list)}.bind(this)}
       onNextpage={this.props._onNextpage}
@@ -42,6 +44,7 @@ class Secpage extends Component
     else
     {
       nxt_btn=<Nextbtn onNextpage={this.props._onNextpage}
+      stateq_list={this.state.q_list}
       _pagelevel={2}
       onDosuchange={function(){
 
@@ -52,10 +55,12 @@ class Secpage extends Component
 
     return(
       <div className='container' >
-      <Upbar _loginf={this.props.loginf}></Upbar>
+      
       <motion.div
-      initial={{x:-500}}
-      animate={{x:0}}>
+      initial={{x:rorl}}
+      animate={{x:0}}
+      transition={{duration:0.5}}>
+        
       <Grid
       container
       direction='row'
@@ -95,6 +100,10 @@ class Secpage extends Component
       ></Qbox>
       )}
       {nxt_btn}
+      <Prevbtn
+      _pagelevel={1}
+      onLoginpost={this.props._onLoginpost}
+      onPrevpage={this.props._onPrevpage}></Prevbtn>
     
      
       </motion.div>

@@ -2,19 +2,19 @@
 .container{
   text-align: center;
   margin:0 auto;
-  align-content: center;
+  width:100%;
 
 }
 .upbar{
+  padding-top: 10px;
   height:40px;
-  background-color: rgb(11, 180, 101);
+  background-color: rgb(202,159,119);
   color: white;
   font-size: 13pt;
-  padding-top:10px;
 }
 .normalcard{
   border-radius: 10px;
-  width:90px;
+  width:23vw;
   height:100px;
   box-shadow: 0px 0px 5px gray;
   background-color: rgb(255, 255, 255);
@@ -34,11 +34,11 @@
 
 
 .selectedcard{
-  width:90px;
+  width:23vw;
   height:100px;
   border-radius: 10px;
  
-  box-shadow: 0px 0px 8px rgb(9, 95, 35);
+  box-shadow: 0px 0px 8px rgb(202,159,119);
   background-color: rgb(255, 255, 255);
   -webkit-transition: -webkit-box-shadow 0.2s, -webkit-transform 0.2s;
   transition: box-shadow 0.2s, transform 0.2s;
@@ -47,29 +47,33 @@
 
 .cardname{
   border-radius: 0px 0px 10px 10px;
-  background-color:rgb(11, 180, 101);
-  height:21px;
+  background-color:rgb(210, 159, 119);
+  height:20px;
+  margin-top: -4px;
   color:white;
+  padding-top: 5px;
   font-size:10pt;
+
 }
 
 
 .step{
   margin-top:18px;
-  background: rgb(11, 180, 101);
+  background: rgb(202,159,119);
   color:white;
   height:28px;
-  width:58px;
+  width:60px;
   align-content: center;
+  left:0;
   font-size:14pt;
 
 }
 .step_question{
   margin-left:10px;
-  color: rgb(11, 180, 101);
+  color: rgb(202,159,119);
 }
 .name{
-  background: rgb(11, 180, 101);
+  background: rgb(202,159,119);
   color:white;
   font-size:12pt;
 }
@@ -83,15 +87,16 @@
   border:rgba(128, 255, 0, 0)
 }
 .logo{
+  border-radius: 50px;
   width:200pt;
   height:200pt;
 }
 .nextbtn{
   box-shadow: 0px 2px 5px rgb(146, 120, 120);
   margin: 0 auto;
-  background-color: rgb(11, 180, 101);
+  background-color: rgb(202,159,119);
   color: white;
-  width: 400px;
+  width: 98vw;
   height: 60px;
   border-radius: 100px 100px 100px 100px;
   -webkit-transition:  -webkit-transform 0.2s;
@@ -99,13 +104,15 @@
 }
 .nextbtn:active{
   transform: scale(0.95,0.95);
+  -webkit-transition:  -webkit-transform 0.2s;
+  transition:  transform 0.2s; 
 }
 .qbox{
   box-shadow: 0px 2px 5px rgb(145, 145, 145);
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
-  color: rgb(11, 180, 101);
-  width: 400px;
+  color: rgb(202,159,119);
+  width: 98vw;
   height: 60px;
   border-radius: 100px 100px 100px 100px;
   -webkit-transition:  -webkit-transform 0.2s, -webkit-background-color 0.2s;;
@@ -115,8 +122,8 @@
   box-shadow: 0px 2px 5px rgb(146, 146, 146);
   margin: 0 auto;
   background-color: rgb(243, 243, 243);
-  color: rgb(11, 180, 101);
-  width: 400px;
+  color: rgb(202,159,119);
+  width: 98vw;
   height: 60px;
   border-radius: 100px 100px 100px 100px;
   transform: scale(0.9,0.9);
@@ -132,20 +139,26 @@
 }
 .box{
   margin: 0 auto;
-  width:300pt;
+  width:98%;
+  padding-left: 2px;
 }
 .grid{
+  
   display:grid;
-  grid-template-columns:100px 100px 100px 100px;
-  column-gap: 3px;
+  grid-template-columns:23vw 23vw 23vw 23vw;
+  column-gap: 2vw;
   row-gap:10px;
 }
 
 .rankbox{
-  border-radius: 10px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  width:97%;
   margin: 0 auto;
-  width:260px;
-  height:260px;
+  border-style: solid ;
+  border-width: 0.5px;
+  border-color: white;
+  background-color: rgb(202,159,119);
 }
 .borderimage{
   width: 180px;
@@ -158,10 +171,10 @@
 }
 .btnhoverrange{
   border-radius: 100px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   height:180px;
   width:180px;
-  margin-top:-215px;
+  margin-top:15px;
   opacity: 0;
 }
 .rank{
@@ -171,7 +184,7 @@
   width:180px;
   height:107px;
   border-radius: 0px 0px 100px 100px;
-  margin-top:-110px;
+  margin-top:88px;
   opacity: 0;
   color:rgb(255, 255, 255);
   background-image:  linear-gradient( to top, rgba(0, 0, 0, 0.76)20%, rgba(0, 0, 0, 0) );
@@ -183,7 +196,7 @@
   width:180px;
   height:107px;
   border-radius: 0px 0px 100px 100px;
-  margin-top:-110px;
+  margin-top:88px;
   
   color:rgb(255, 255, 255);
   background-image:  linear-gradient( to top, rgba(0, 0, 0, 0.76)20%, rgba(0, 0, 0, 0) );
@@ -195,9 +208,7 @@
 }
 .rankrowgrid{
   display:grid;
-  justify-items: center;
-  grid-template-rows:20px 200px 30px;
-  row-gap: 0px;
+  
 }
 .listrowgrid{
   margin-top:50px;
@@ -209,8 +220,8 @@
 .barrowgrid{
   display:grid;
   justify-items: center;
-  grid-template-rows:0px 50px;
-  row-gap: 50px;
+  grid-template-rows:0px 50px 100px;
+  row-gap: 0px;
 }
 .rankcolgrid{
   display:grid;
@@ -229,7 +240,7 @@
 }
 .coloredtext{
   font-size: 15pt;
-  color: rgb(11, 180, 101);
+  color: rgb(202,159,119);
 }
 .tag{
   font-size:12pt;
@@ -240,9 +251,17 @@
  
 }
 .soolimg{
+  border-radius: 10px 10px 0px 0px;
   width: 75%;
   height: 75%;
-  object-fit: contain;
+  object-fit:contain;
+  background-color: white;
+}
+.anjooimg{
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 75%;
+  object-fit:cover;
   background-color: white;
 }
 .upc{
@@ -253,21 +272,22 @@
   
 
   margin-top:-20px;
+  margin-left:80px;
   color:rgb(255, 255, 255);
   height:25px;
   width:40px;
   font-size: 15pt;
 
-  background-color: rgb(11, 180, 101);
+  background-color: rgb(202,159,119);
 }
 .tagbox{
-  box-shadow: 0px 2px 10px rgb(151, 151, 151);
+  align-content: center;
+  font-family: 'Pretendard-Bold';
   border-radius: 10px;
   margin-top:0px;
-  color:rgb(255, 255, 255);
-  height:50px;
-  width:200px;
-  background-color: rgb(11, 180, 101);
+  height:20px;
+  width:110%;
+  background-color: rgb(202,159,119);
 
 }
 .circlebarbox{
@@ -278,9 +298,11 @@
 }
 .circlebar{
   
-  margin-top:-240px;
+  margin-top:2px;
   height:230px;
   width:230px;
+  margin-left:-15px;
+  
 
 }
 .alchdo{
@@ -297,7 +319,7 @@
   
   width:750px;
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
 
 }
 .selectedcircle{
@@ -323,11 +345,264 @@
   margin-top:100px;
   box-shadow: 0px 2px 5px rgb(146, 120, 120);
   
-  background-color: rgb(11, 180, 101);
+  background-color: rgb(202,159,119);
   color: white;
   width: 400px;
   height: 60px;
   border-radius: 100px 100px 100px 100px;
+  -webkit-transition:  -webkit-transform 0.2s;
+  transition:  transform 0.2s; 
+}
+.taggrid{
+  margin-top:30px;
+  color: white;
+  font-size: 10pt;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(50px, auto));
+  grid-auto-rows: 25px 25px 25px 25px;
+  column-gap: 10px;
+  row-gap:0px;
+
+}
+
+.kakao-share-button{
+
+  -webkit-transition:  -webkit-transform 0.2s;
+  transition:  transform 0.2s; 
+  
+}
+.sharetxt
+{
+  padding-top: 20px;
+  margin-top: 10px;
+}
+.kakao-share-button:active{
+  transform:scale(0.95)
+}
+.loading{
+  padding-top: 200px;
+}
+.tastegrid{
+  font-family: 'Pretendard-Bold';
+  margin-top:30px;
+  color:rgb(117,80,52);
+  display: grid;
+  background-color: rgb(202,159,119);
+  grid-template-columns: 70px 80px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.alchbox{
+  padding-left:20px;
+  margin: 0 auto;
+  width:400px;
+  display: grid;
+  grid-template-columns: 150px 100px;
+  column-gap:50px;
+}
+
+.horibar{
+  width:100px;
+  height:100px;
+  background-color: rgb(99, 45, 99);
+  padding-top: 500px;
+}
+.recbox{
+  background-color: rgb(202,159,119);
+  width:100px;
+  height:100px;
+}
+.resultrow{
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: rgb(202,159,119);
+}
+.fixedbtn{
+  margin-bottom: 10px;
+  color:rgb(255, 255, 255);
+  background:rgb(73, 46, 36);
+  height:80px;
+  width:100%;
+  margin:0 auto;
+    display: grid;
+    
+    
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom:0;
+
+}
+.imgover{
+  display: grid;
+  grid-template-rows: 0px 0px;
+}
+@font-face{
+  font-family:'Pretendard-Thin';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+  font-weight:100;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+.new_top{
+  display:grid;
+  height:100vh;
+  margin : 0 auto;
+  width:100%;
+  grid-template-rows : 60vh 20vh;
+  background-color: rgb(210, 157, 112);
+  
+}
+
+.first_container{
+  margin : 0 auto;
+  width:98%;
+  
+  
+  
+}
+.first_first_container{
+  display: inline-block;
+  vertical-align: top;
+  height :300px;
+  width : 100%;
+  margin-top: 1%;
+  
+  
+  
+  
+  border-color : white;
+  border-style : solid;
+  border-width : 0.5px;
+  display:grid;
+  grid-template-rows : 50px 50px 100px 50px 50px;
+}
+.headline{
+  font-family: 'Pretendard-Bold';
+  text-align : left;
+  margin-left : 2%;
+  color : white;
+  margin-top : 5px;
+  font-size : 40px;
+}
+.emptybox{
+  height:100px;
+}
+.sublinebox{
+  height : 50px;
+}
+.subline{
+  font-family : 'Pretendard-Thin';
+  text-align : right;
+  margin-right : 10px;
+  color : white;
+  font-size : 14px;
+}
+.second_container{
+  display:grid;
+  grid-template-rows : 10px 10px 10px;
+}
+.imgbox{
+  margin : 0 auto;
+}
+.countbox{
+  font-family:'Pretendard-Bold';
+  text-align : center;
+  color : white;
+  font-size : 2vh;
+  margin-top: 30px;
+}
+.empty{
+  height:20px;
+}
+.logobtn
+{
+  width:20vh;
+  height:20vh;
+  transition: transform 0.2s;
+}
+.logobtn:active
+{
+  transform: scale(0.95);
+}
+.shoppingbtn{
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top:20px;
+  transition: transform 0.2s;
+  color: white;
+  background:rgb(122, 91, 63);
+
+  width: 97%;
+  height: 50px;
+  padding-top: 25px;
+
+}
+.shoppingbtn:active{
+  transition: transform 0.2s;
+  transform: scale(0.98,0.95);
+}
+.testimg{
+  width:100%;
+}
+.logogrid
+{
+  
+  width:300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50px 250px;
+}
+.logogrid2
+{
+  width:230px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50px 180px;
+}
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+.littlebold{
+  font-family:'Pretendard-Medium';
+  font-size : 14px;
+  color : white;
+  text-align : right;
+}
+.recbtngrid
+{
+  display: grid;
+  grid-template-columns: 85% 15%;
+}
+.heartbtngrid
+{
+  margin:0 auto;
+  display: grid;
+  grid-template-rows: 10px 10px;
+}
+.heartbtn
+{
+  -webkit-transition:  -webkit-transform 0.2s;
+  transition:  transform 0.2s; 
+    margin-top:20px;
+    padding-bottom:25px;
+    height:50px;
+    width:93%;
+    font-size:30px;
+    background:white;
+    border-radius:10px;
+}
+.heartbtn:active
+{
+  transform: scale(0.95,0.95);
   -webkit-transition:  -webkit-transform 0.2s;
   transition:  transform 0.2s; 
 }
