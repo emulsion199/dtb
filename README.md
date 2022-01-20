@@ -2,7 +2,7 @@
 
 ### Please test our model!
 
-[Test Linke](https://emulsion199.github.io/dtb/)
+[https://emulsion199.github.io/dtb/](https://emulsion199.github.io/dtb/)
 
 <img src="https://user-images.githubusercontent.com/87512263/150289143-7cb62a78-509f-404d-9ff3-82502a60205e.png" width="250" height="400">
 
