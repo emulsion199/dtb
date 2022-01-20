@@ -571,7 +571,7 @@ class App extends Component
 
     axios.post('https://projw.pythonanywhere.com//home',
   {
-    "인기주류":tastelist,
+    "주종":tastelist,
     "도수":postdosu,
     "맛":posttaste,
     "탄산":posttansan,
