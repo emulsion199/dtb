@@ -18,4 +18,4 @@ We ask users to answer several questions, and introduce their Alochol Personalit
 
 Please click the link below to watch presentation held in Korea University, Seoul.
 
-> [Youtube Link](https://www.youtube.com/watch?v=r0AVsQoHHUU)
+> [https://www.youtube.com/watch?v=r0AVsQoHHUU](https://www.youtube.com/watch?v=r0AVsQoHHUU)
