@@ -12843,7 +12843,7 @@ CORS(app)
 @app.route('/home',methods=['GET','POST'])
 def home():
     data = request.json
-    taste = data['인기주류']  ### 1번
+    type = data['주종']  ### 1번
     dosu = data['도수']  ### 3번
     tansan = data['탄산']  ### 4번
     anju = data['안주']  ### 6번
@@ -12861,56 +12861,35 @@ def home():
         mindosu = 20
         maxdosu = 100
 
-    ########## 1번 인기주류를 바탕으로 새로운 술을 만드는 것 ######
-    popular_list = []
-    popular_taste = [0, 0, 0, 0, 0]
-    delete_col=[]
-
-    for i in taste:
-        temp_list = [float(i['단맛']), float(i['바디감']), float(i['신맛']), float(i['향']), float(i['청량감'])]
-        popular_list.append(temp_list)
-    for i in range(0, 5):
-        for j in range(0, len(popular_list)):
-            popular_taste[i] += popular_list[j][i]
-        popular_taste[i] = float(popular_taste[i] / len(popular_list))
-    for i in range(0, 5):
-        max_taste = -1
-        min_taste = 10
-        for j in range(0, len(popular_list)):
-            max_taste = max(max_taste, popular_list[j][i])
-            min_taste = min(min_taste, popular_list[j][i])
-        if max_taste - min_taste > 1: ###몇점 차이 이상?
-            del popular_taste[i-len(delete_col)]
-            delete_col.append(i)
-
+    ########## 1번 주종를 바탕으로 새로운 술을 만드는 것 ######
+    
     #### 리스트에 넣고 클러스터링 #####
-    taste_list = []
-    taste_list.append(popular_taste)
-    sool_num = []
-
-    sool_num.append(0)
-    for i in range(1, len(json_data) - 12):
-        col = ['단맛', '바디감', '신맛', '향', '청량감']
-        sool_num.append(i)
-        soolmat_list = [float(json_data[i]['단맛']), float(json_data[i]['바디감']), float(json_data[i]['신맛']),
-                        float(json_data[i]['향']), float(json_data[i]['청량감'])]
-        for j in range(0,len(delete_col)):
-            del soolmat_list[delete_col[j]-j]
-            del col[delete_col[j]-j]
-        taste_list.append(soolmat_list)
-    taste_df = pd.DataFrame(columns=col)
-    for i in range(0, len(taste_list)):
-        taste_df.loc[i] = taste_list[i]
-    document_df = pd.DataFrame({'Number': sool_num, 'Taste_Text': taste_list})
 
     res_score_list = []
 
     for i in range(0, 529):
         res_score_list.append([i, 0])
-    mat_level = 2
+    mat_level = 5
+    if type == 0:
+        jujong = ["와인", "과실주", "과실주 (포도)"]
+        for i in range(1, len(res_score_list)):
+            if json_data[res_score_list[i][0]]['주종'] in jujong:
+                res_score_list[i][1] += mat_level
+    elif type == 1:
+        jujong = ["살균 탁주", "생막걸리", "생탁주", "전통 수제 탁주", "탁주"]
+        for i in range(1, len(res_score_list)):
+            if json_data[res_score_list[i][0]]['주종'] in jujong:
+                res_score_list[i][1] += mat_level
+    elif type == 2:
+        jujong = ["소주", "일반증류주", "증류식소주", "증류주"]
+        for i in range(1, len(res_score_list)):
+            if json_data[res_score_list[i][0]]['주종'] in jujong:
+                res_score_list[i][1] += mat_level
+    
     ##### 8번 술을 고를 때 2 #####
     if importance2 == 0:
-        mat_level = 4
+        for i in range(1, len(res_score_list)):
+            res_score_list[i][1] *= 2
     else:
         for i in range(1, len(res_score_list)):
             if importance2 == 1:
@@ -12921,15 +12900,6 @@ def home():
                 res_score_list[i][1] += float(json_data[res_score_list[i][0]]['저가'])
             elif importance2 == 4:
                 res_score_list[i][1] += float(json_data[res_score_list[i][0]]['감각적인패키지색감있는'])
-
-    km_cluster = KMeans(n_clusters=9, init="k-means++", max_iter=1000, random_state=0).fit(taste_df)
-
-    cluster_label = km_cluster.labels_
-    document_df['Cluster'] = cluster_label
-    cluster_num = document_df.iloc[0]['Cluster']
-    for i in range(1, len(json_data) - 12):
-        if cluster_num == document_df.iloc[i]['Cluster']:
-            res_score_list[document_df.iloc[i]['Number']][1] += 2 * mat_level
 
     ##### 3번 도수 #####
     i = 0
@@ -13028,6 +12998,3 @@ def home():
 
 if __name__ == '__main__':
       app.run(host='0.0.0.0', port=8080)
-
-
-

@@ -511,6 +511,8 @@ class App extends Component
           
         }
         )
+
+
         
   
 
@@ -571,7 +573,7 @@ class App extends Component
 
     axios.post('https://projw.pythonanywhere.com//home',
   {
-    "인기주류":tastelist,
+    "주종":tastelist,
     "도수":postdosu,
     "맛":posttaste,
     "탄산":posttansan,
@@ -652,6 +654,17 @@ loginf={this.state.login_inform}
       _testtype={testtype}
       loginf={this.state.login_inform}
       postdata={this.state.data}
+      sdata={[
+        tastelist,
+        postdosu,
+        posttaste,
+        posttansan,
+        postcond,
+        postbob,
+        this.state.selectedcardid2,
+        postimp,
+        postimp2,
+      ]}
 
      
     ></Result>

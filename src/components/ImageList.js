@@ -1,11 +1,12 @@
 import React,{Component} from 'react'
 import CardPage from './CardPage'
-import 'C:/Users/user/hello/src/App.css'
+import '../App.css'
 import sooldata from './sool_data.json'
 var sool=[]
 var i=1
-while(i<=12)
+while(i<=4)
 {
+    
     sool.push(
         {name:sooldata[i+528]["상품명"],
         id:i,

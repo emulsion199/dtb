@@ -35,7 +35,7 @@ class RecCard extends Component
             dbref.once('value').then((snapshot) => {
             this.setState(
           {
-            hnumber:Number(snapshot.val()['heart'][_id])
+            hnumber:Number(snapshot.val()['heart'][_id].length)-1
           }
         )
         }
@@ -202,9 +202,11 @@ class RecCard extends Component
                         if(this.state.clickflag==0)
                         { var dbref = Firebaseinit.database().ref('/heartdir');
                         dbref.once('value').then((snapshot) => {
-                              var hnumber=Number(snapshot.val()['heart'][_id])
+
+                              var hnumber=Number((snapshot.val()['heart'][_id]).length)
                               var hlist=(snapshot.val()['heart'])
-                              hlist[_id]+=1
+                              hlist[_id].push(this.props.sdata)
+                              
                               dbref.set({
                                 heart:hlist
                               });

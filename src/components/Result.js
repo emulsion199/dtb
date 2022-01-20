@@ -25,6 +25,7 @@ class Result extends Component
   render(){
     var _postdata=this.props.postdata
     var testtype=this.props._testtype
+    var _sdata=this.props.sdata
     console.log(testtype)
     var _content= 
     <div className='loading'>
@@ -75,13 +76,13 @@ class Result extends Component
         }}>당신에게 어울리는 전통주는?&#127862;</div>
         <RecCard 
         
-        id={_postdata[0]} rank={1} imgsrc={require('./imgbox/'+(_postdata[0]+12)+'.jpg').default} imgname={sooldata[_postdata[0]]["상품명"]}></RecCard>
+        id={_postdata[0]} rank={1} imgsrc={require('./imgbox/'+(_postdata[0]+12)+'.jpg').default} imgname={sooldata[_postdata[0]]["상품명"]} sdata={_sdata}></RecCard>
         <RecCard 
         
-        id={_postdata[1]} rank={2} imgsrc={require('./imgbox/'+(_postdata[1]+12)+'.jpg').default} imgname={sooldata[_postdata[1]]["상품명"]}></RecCard>
+        id={_postdata[1]} rank={2} imgsrc={require('./imgbox/'+(_postdata[1]+12)+'.jpg').default} imgname={sooldata[_postdata[1]]["상품명"]} sdata={_sdata}></RecCard>
         <RecCard 
         
-        id={_postdata[2]} rank={3} imgsrc={require('./imgbox/'+(_postdata[2]+12)+'.jpg').default} imgname={sooldata[_postdata[2]]["상품명"]}></RecCard>
+        id={_postdata[2]} rank={3} imgsrc={require('./imgbox/'+(_postdata[2]+12)+'.jpg').default} imgname={sooldata[_postdata[2]]["상품명"]} sdata={_sdata}></RecCard>
        </div>
        <div className='fixedbtn'>
        <Sharebtn desc1={_desc1} title1={sooldata[_postdata[0]]['상품명']} imgsrc1={imagelink["링크"][_postdata[0]]}

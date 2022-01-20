@@ -43,7 +43,7 @@ class Firstpage extends Component
       <div className='step'>
         <div>STEP1</div>
         </div>
-      <h3 className='step_question'>선호하는 주류를 선택하세요(최대3개)</h3>
+      <h3 className='step_question'>선호하는 주종을 선택하세요(최대3개)</h3>
       </Grid>
       <ImageList onChangelist={this.props._onSelectedCard}></ImageList>
       <Nextbtn _pagelevel={1} onNextpage={this.props._onNextpage}></Nextbtn>

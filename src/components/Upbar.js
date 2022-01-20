@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import 'C:/Users/user/hello/src/App.css'
+import '../App.css'
 class Upbar extends Component
 {
   render()
